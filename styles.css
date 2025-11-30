@@ -260,7 +260,6 @@ section {
    align-items: center;
    justify-content: space-between;
    overflow: hidden;
-   padding-bottom: 20px;
  }
 
 .background-section {
@@ -283,12 +282,12 @@ section {
  .feliz_dia {
    background: linear-gradient(135deg, #ff1744 0%, #ff5252 50%, #ff6e40 100%);
    border-radius: 15px;
-   width: 320px;
+   width: 300px;
    color: white;
    z-index: 2;
-   margin: 12px auto;
+   margin: 8px auto;
    text-align: center;
-   padding: 20px 0;
+   padding: 16px 0;
    box-shadow: 0 8px 32px rgba(255, 23, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
    border: 1px solid rgba(255, 255, 255, 0.1);
    transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -301,9 +300,9 @@ section {
  
  .feliz_dia h1 {
    margin: 0;
-   font-size: 32px;
+   font-size: 28px;
    font-weight: 700;
-   letter-spacing: 1px;
+   letter-spacing: 0.5px;
    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
  }
  
@@ -368,15 +367,15 @@ section {
   border-radius: 10px 5px;
   width: 95%;
   max-width: 500px;
-  margin: 2px auto;
-  padding: 4px 8px;
+  margin: 0px auto;
+  padding: 2px 6px;
   text-align: center;
   color: white;
   z-index: 2;
   position: relative;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.1;
   word-wrap: break-word;
   flex-shrink: 0;
 }
@@ -408,8 +407,8 @@ section {
 /* Tablets e telas médias (até 768px) */
 @media (max-width: 768px) {
   .fim {
-    font-size: 18px;
-    margin: 2px auto;
+    font-size: 16px;
+    margin: 0px auto;
     width: 95%;
   }
 }
@@ -417,9 +416,9 @@ section {
 /* Smartphones (até 480px) */
 @media (max-width: 480px) {
   .fim {
-    font-size: 16px;
-    margin: 2px auto;
-    padding: 2px 6px;
+    font-size: 14px;
+    margin: 0px auto;
+    padding: 1px 4px;
     width: 95%;
     max-width: none;
   }
@@ -428,9 +427,9 @@ section {
 /* Smartphones pequenos (até 360px) */
 @media (max-width: 360px) {
   .fim {
-    font-size: 14px;
-    margin: 1px auto;
-    padding: 2px 4px;
+    font-size: 12px;
+    margin: 0px auto;
+    padding: 1px 3px;
   }
 }
 
