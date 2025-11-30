@@ -285,7 +285,7 @@ section {
    width: 300px;
    color: white;
    z-index: 2;
-   margin: 8px auto;
+   margin: 1px auto;
    text-align: center;
    padding: 16px 0;
    box-shadow: 0 8px 32px rgba(255, 23, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -311,7 +311,7 @@ section {
    display: flex;
    justify-content: center;
    align-items: center;
-   flex: 1;
+   flex: 0.8;
    position: relative;
    z-index: 1;
    width: 100%;
@@ -367,17 +367,21 @@ section {
   border-radius: 10px 5px;
   width: 95%;
   max-width: 500px;
-  margin: 0px auto;
-  padding: 2px 6px;
+  margin: -2px auto;
+  padding: 1px 6px;
   text-align: center;
   color: white;
   z-index: 2;
   position: relative;
   font-size: 18px;
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1;
   word-wrap: break-word;
   flex-shrink: 0;
+}
+
+.fim:last-of-type {
+  margin-bottom: 20px;
 }
 
 /* Botão de play para música de fundo (visível apenas se autoplay for bloqueado) */
@@ -408,7 +412,7 @@ section {
 @media (max-width: 768px) {
   .fim {
     font-size: 16px;
-    margin: 0px auto;
+    margin: -2px auto;
     width: 95%;
   }
 }
@@ -417,8 +421,8 @@ section {
 @media (max-width: 480px) {
   .fim {
     font-size: 14px;
-    margin: 0px auto;
-    padding: 1px 4px;
+    margin: -2px auto;
+    padding: 0px 4px;
     width: 95%;
     max-width: none;
   }
@@ -428,8 +432,8 @@ section {
 @media (max-width: 360px) {
   .fim {
     font-size: 12px;
-    margin: 0px auto;
-    padding: 1px 3px;
+    margin: -2px auto;
+    padding: 0px 3px;
   }
 }
 
