@@ -1,0 +1,401 @@
+@charset "UTF-8";
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* sem scroll */
+  margin: 0;
+  padding: 0;
+  background: #000; /* Alterado para preto conforme solicitado (fundo da página) */
+  font-family: Arial, sans-serif;
+}
+
+
+*{
+padding: 0;
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+box-sizing: border-box;
+}
+
+#clickButton {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 20px 40px;
+font-size: 24px;
+color: white;
+background: rgba(46, 168, 168, 0.1);
+border: 1px solid rgb(0, 0, 0);
+border-radius: 12px;
+cursor: pointer;
+transition: 0.3s;
+box-shadow: black 0px 0px 5px;
+z-index: 100;
+}
+
+
+#clickButton:hover {
+background: white;
+color: black;
+}
+
+
+canvas {
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+
+}
+
+/* Canvas específico para fogos em main.html: entre o vídeo (-1) e o conteúdo (>=1) */
+#fireworksCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0; /* ficará acima do vídeo (z-index: -1) e atrás do conteúdo (z-index >= 1) */
+}
+
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #235858, #2A8787, #0CC7C7, #00FFFF);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  z-index: -3;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.clouds {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -2; /* entre bg-animation (-3) e canvas (-1) */
+}
+
+/* Estilo base para cada nuvem (cada elemento usa a mesma imagem) */
+.cloud {
+  position: absolute;
+  background-image: url("img/cloud-3d-render-on-transparent-background-free-png.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  will-change: transform, opacity;
+  opacity: 0.95;
+  transform: translateX(0);
+  animation-name: moveCloud;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Animação que desloca a nuvem da esquerda para a direita */
+@keyframes moveCloud {
+  0% { transform: translateX(-40vw) scale(var(--s, 1)); }
+  100% { transform: translateX(140vw) scale(var(--s, 1)); }
+}
+
+/* Nuvem 1 */
+.cloud1 {
+  top: 6%;
+  left: -20%;
+  width: 320px;
+  height: 200px;
+  animation-duration: 60s;
+  --s: 1.05;
+  animation-delay: -10s;
+}
+
+/* Nuvem 2 */
+.cloud2 {
+  top: 22%;
+  left: -30%;
+  width: 380px;
+  height: 240px;
+  animation-duration: 85s;
+  opacity: 0.88;
+  --s: 1.15;
+  animation-delay: -30s;
+}
+
+/* Nuvem 3 */
+.cloud3 {
+  top: 50%;
+  left: -25%;
+  width: 300px;
+  height: 190px;
+  animation-duration: 70s;
+  --s: 0.95;
+  animation-delay: -50s;
+}
+
+/* Nuvem 4 */
+.cloud4 {
+  top: 68%;
+  left: -35%;
+  width: 260px;
+  height: 170px;
+  animation-duration: 95s;
+  --s: 1.05;
+  animation-delay: -20s;
+}
+
+/* Nuvem 5 */
+.cloud5 {
+  top: 36%;
+  left: -40%;
+  width: 320px;
+  height: 210px;
+  animation-duration: 110s;
+  opacity: 0.8;
+  --s: 1.2;
+  animation-delay: -70s;
+}
+
+/* Nuvens extras (6-10) */
+.cloud6 {
+  top: 12%;
+  left: -28%;
+  width: 220px;
+  height: 140px;
+  animation-duration: 50s;
+  opacity: 0.92;
+  --s: 0.85;
+  animation-delay: -5s;
+}
+
+.cloud7 {
+  top: 62%;
+  left: -45%;
+  width: 400px;
+  height: 260px;
+  animation-duration: 100s;
+  opacity: 0.78;
+  --s: 1.25;
+  animation-delay: -90s;
+}
+
+.cloud8 {
+  top: 28%;
+  left: -10%;
+  width: 180px;
+  height: 110px;
+  animation-duration: 40s;
+  opacity: 0.95;
+  --s: 0.8;
+  animation-delay: -8s;
+}
+
+.cloud9 {
+  top: 82%;
+  left: -35%;
+  width: 260px;
+  height: 170px;
+  animation-duration: 120s;
+  opacity: 0.72;
+  --s: 1.0;
+  animation-delay: -110s;
+}
+
+.cloud10 {
+  top: 4%;
+  left: -50%;
+  width: 420px;
+  height: 270px;
+  animation-duration: 140s;
+  opacity: 0.6;
+  --s: 1.35;
+  animation-delay: -120s;
+}
+
+.cloud11 {
+  top: 48%;
+  left: -15%;
+  width: 200px;
+  height: 130px;
+  animation-duration: 65s;
+  opacity: 0.86;
+  --s: 0.9;
+  animation-delay: -22s;
+}
+
+.cloud12 {
+  top: 18%;
+  left: -60%;
+  width: 360px;
+  height: 220px;
+  animation-duration: 130s;
+  opacity: 0.7;
+  --s: 1.12;
+  animation-delay: -45s;
+}
+
+/* _______________________________main______________________________ */
+
+section {
+   width: 100%;
+   height: 100vh;
+   position: relative;
+   padding: 0;
+   z-index: 1; /* garante que o conteúdo fique acima do canvas */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   overflow: hidden;
+ }
+
+.background-section {
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   position: fixed;
+   z-index: -1;
+ }
+
+.background-section video {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center;
+
+ }
+
+ .feliz_dia {
+   background: linear-gradient(135deg, #ff1744 0%, #ff5252 50%, #ff6e40 100%);
+   border-radius: 15px;
+   width: 320px;
+   color: white;
+   z-index: 2;
+   margin: 12px auto;
+   text-align: center;
+   padding: 20px 0;
+   box-shadow: 0 8px 32px rgba(255, 23, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+ 
+ .feliz_dia:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 12px 40px rgba(255, 23, 68, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+ }
+ 
+ .feliz_dia h1 {
+   margin: 0;
+   font-size: 32px;
+   font-weight: 700;
+   letter-spacing: 1px;
+   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+ }
+ 
+
+ .box {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex: 1;
+   position: relative;
+   z-index: 1;
+   width: 100%;
+ }
+ 
+ div.carrossel {
+   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   border-radius: 15px;
+   overflow: hidden;
+   max-height: 90vw;
+   height: 380px;
+   width: 80vw;        
+   max-width: 280px;   
+   aspect-ratio: 3 / 5;  
+ }
+
+ .container {
+   display: flex;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
+  width: 100%;
+  height: 100%;
+ }
+
+ #img {
+   display: flex;
+   width: 100%;
+   height: 100%;
+ }
+
+ .fm {
+   width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+  background-color: #000; 
+ }
+
+ .player-container {
+   position: relative;
+   z-index: 2;
+   width: 300px;
+   margin: 6px auto;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+   border-radius: 12px;
+ }
+
+ .player-container iframe {
+   border-radius: 12px;
+ }
+
+.fim {
+  border-radius: 10px 5px;
+  width: 90%;
+  max-width: 450px;
+  margin: 4px auto;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Botão de play para música de fundo (visível apenas se autoplay for bloqueado) */
+.box { position: relative; }
+
+.music-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.9);
+  color: #000; /* trocado para preto */
+  border: 1px solid rgba(0,0,0,0.12);
+  font-size: 18px;
+  display: none; /* exibido só quando necessário */
+  cursor: pointer;
+  z-index: 30; /* acima das imagens */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Estilos do botão de play removidos — não precisa mais */

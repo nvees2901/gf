@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu bem</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/Succodesign-Love-Is-In-The-Web-Heart.512.png" type="image/x-icon">
+    
+
+</head>
+<body>
+  <!-- Música de fundo: embed oficial do Spotify -->
+    <section>
+      <div class="background-section">
+        <video
+          src="img/9905539-hd_1920_1080_30fps.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+      </div>
+      <!-- Canvas para fogos de artifício como fundo animado -->
+      <canvas id="fireworksCanvas"></canvas>
+
+      <div class="player-container">
+        <iframe
+          data-testid="embed-iframe"
+          src="https://open.spotify.com/embed/track/2kfGoV9a5dbSKCNmUWH2ZF?utm_source=generator"
+          width="100%"
+          height="100"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="Spotify player"
+        ></iframe>
+      </div>
+
+      <!-- Botão de reprodução fora da box "Te amo" (aparecerá acima do bloco) -->
+      <div class="feliz_dia">
+        <h1>Te amo</h1>
+      </div>
+
+      <div class="box">
+        <div class="carrossel">
+          <div class="container" id="img">
+            <img class="fm" src="img/1.jpeg" alt="imagem1" />
+            <img class="fm" src="img/2.jpeg" alt="imagem2" />
+            <img class="fm" src="img/3.jpeg" alt="imagem3" />
+            <img class="fm" src="img/4.jpeg" alt="imagem4" />
+            <img class="fm" src="img/5.jpeg" alt="imagem5" />
+            <img class="fm" src="img/6.jpeg" alt="imagem6" />
+            <img class="fm" src="img/7.jpeg" alt="imagem7" />
+            <img class="fm" src="img/8.jpeg" alt="imagem7" />
+          </div>
+        </div>
+        
+      </div>
+
+      <h1 class="fim"> Há: </h1>
+      <h1 class="fim" id="contador"></h1>
+      <h1 class="fim">que eu sei </h1>
+    </section>
+
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
