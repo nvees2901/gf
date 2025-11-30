@@ -260,6 +260,7 @@ section {
    align-items: center;
    justify-content: space-between;
    overflow: hidden;
+   padding-bottom: 20px;
  }
 
 .background-section {
@@ -365,15 +366,19 @@ section {
 
 .fim {
   border-radius: 10px 5px;
-  width: 90%;
-  max-width: 450px;
-  margin: 4px auto;
+  width: 95%;
+  max-width: 500px;
+  margin: 2px auto;
+  padding: 4px 8px;
   text-align: center;
   color: white;
   z-index: 2;
   position: relative;
   font-size: 20px;
   font-weight: 600;
+  line-height: 1.2;
+  word-wrap: break-word;
+  flex-shrink: 0;
 }
 
 /* Botão de play para música de fundo (visível apenas se autoplay for bloqueado) */
@@ -396,6 +401,37 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+/* ========================= RESPONSIVIDADE MOBILE ========================= */
+
+/* Tablets e telas médias (até 768px) */
+@media (max-width: 768px) {
+  .fim {
+    font-size: 18px;
+    margin: 2px auto;
+    width: 95%;
+  }
+}
+
+/* Smartphones (até 480px) */
+@media (max-width: 480px) {
+  .fim {
+    font-size: 16px;
+    margin: 2px auto;
+    padding: 2px 6px;
+    width: 95%;
+    max-width: none;
+  }
+}
+
+/* Smartphones pequenos (até 360px) */
+@media (max-width: 360px) {
+  .fim {
+    font-size: 14px;
+    margin: 1px auto;
+    padding: 2px 4px;
+  }
 }
 
 /* Estilos do botão de play removidos — não precisa mais */
